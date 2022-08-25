@@ -1,0 +1,1000 @@
+{
+	"info": {
+		"_postman_id": "0cbfbc51-5ef3-4d10-a934-b74cbecaa761",
+		"name": "MIFOS_DEVCON_MOOV",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17038095"
+	},
+	"item": [
+		{
+			"name": "Create Customer Account",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "mifos",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "fineract-platform-tenantid",
+						"value": "default",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"officeId\": 1,\n    \"address\": [],\n    \"familyMembers\": [],\n    \"firstname\": \"JUAN\",\n    \"middlename\": \"MANUEL\",\n    \"lastname\": \"PEREZ\",\n    \"legalFormId\": 1,\n    \"birthPlaceId\": 279,\n    \"surname\": \"LOPEZ\",\n    \"rfc\": \"RORV810322CH8\",\n    \"mobileNo\": \"5522649495\",\n    \"active\": true,\n    \"savingsProductId\": 30001,\n    \"locale\": \"es-mx\",\n    \"dateFormat\": \"dd MMMM yyyy\",\n    \"activationDate\": \"25 agosto 2022\",\n    \"dateOfBirth\": \"16 agosto 1993\",\n    \"groupLoanCounter\": 0,\n    \"uniqueId\": \"RORV810322CH712333\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://backoffice.flexcore.mx/fineract-provider/api/v1/clients",
+					"protocol": "https",
+					"host": [
+						"backoffice",
+						"flexcore",
+						"mx"
+					],
+					"path": [
+						"fineract-provider",
+						"api",
+						"v1",
+						"clients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload KYC Information",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "mifos",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "fineract-platform-tenantid",
+						"value": "default",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "clientSignature",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "client signature",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/mifosio/Descargas/media-AF1QipMdsa1ljGwtN3wjKlouwgONDxOT5DrPjE_l.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://backoffice.flexcore.mx/fineract-provider/api/v1/clients/27390010/documents",
+					"protocol": "https",
+					"host": [
+						"backoffice",
+						"flexcore",
+						"mx"
+					],
+					"path": [
+						"fineract-provider",
+						"api",
+						"v1",
+						"clients",
+						"27390010",
+						"documents"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Additional Information",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "mifos",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "fineract-platform-tenantid",
+						"value": "default",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"SAT\": \"VALID\",\n    \"RENAPO\": \"VALID\",\n    \"ECONOMIA\": \"VALID\",\n    \"CREDITO\": \"VALID\",\n    \"SCORE\": \"573\",\n    \"locale\": \"es-mx\",\n    \"dateFormat\": \"dd MMMM yyyy\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://backoffice.flexcore.mx/fineract-provider/api/v1/datatables/VALIDACION/27390010?genericResultSet=true",
+					"protocol": "https",
+					"host": [
+						"backoffice",
+						"flexcore",
+						"mx"
+					],
+					"path": [
+						"fineract-provider",
+						"api",
+						"v1",
+						"datatables",
+						"VALIDACION",
+						"27390010"
+					],
+					"query": [
+						{
+							"key": "genericResultSet",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Checking Account Product",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "mifos",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "fineract-platform-tenantid",
+						"value": "default",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"productId\": 30001,\n    \"nominalAnnualInterestRate\": 0,\n    \"accountLevel\": 1,\n    \"withdrawalFeeForTransfers\": false,\n    \"allowOverdraft\": false,\n    \"enforceMinRequiredBalance\": false,\n    \"withHoldTax\": false,\n    \"interestCompoundingPeriodType\": 1,\n    \"interestPostingPeriodType\": 4,\n    \"interestCalculationType\": 1,\n    \"interestCalculationDaysInYearType\": 365,\n    \"submittedOnDate\": \"25 agosto 2022\",\n    \"locale\": \"es-mx\",\n    \"dateFormat\": \"dd MMMM yyyy\",\n    \"monthDayFormat\": \"dd MMM\",\n    \"charges\": [],\n    \"clientId\": \"27390010\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://backoffice.flexcore.mx/fineract-provider/api/v1/savingsaccounts",
+					"protocol": "https",
+					"host": [
+						"backoffice",
+						"flexcore",
+						"mx"
+					],
+					"path": [
+						"fineract-provider",
+						"api",
+						"v1",
+						"savingsaccounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Approve Checking Account Product",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "mifos",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "fineract-platform-tenantid",
+						"value": "default",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"approvedOnDate\": \"25 agosto 2022 04:39\",\n    \"locale\": \"es-mx\",\n    \"dateFormat\": \"dd MMMM yyyy HH:mm\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://backoffice.flexcore.mx/fineract-provider/api/v1/savingsaccounts/600021?command=approve",
+					"protocol": "https",
+					"host": [
+						"backoffice",
+						"flexcore",
+						"mx"
+					],
+					"path": [
+						"fineract-provider",
+						"api",
+						"v1",
+						"savingsaccounts",
+						"600021"
+					],
+					"query": [
+						{
+							"key": "command",
+							"value": "approve"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activate Checking Account Product",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "mifos",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "fineract-platform-tenantid",
+						"value": "default",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"activatedOnDate\": \"25 agosto 2022 04:42\",\n    \"locale\": \"es-mx\",\n    \"dateFormat\": \"dd MMMM yyyy HH:mm\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://backoffice.flexcore.mx/fineract-provider/api/v1/savingsaccounts/600021?command=activate",
+					"protocol": "https",
+					"host": [
+						"backoffice",
+						"flexcore",
+						"mx"
+					],
+					"path": [
+						"fineract-provider",
+						"api",
+						"v1",
+						"savingsaccounts",
+						"600021"
+					],
+					"query": [
+						{
+							"key": "command",
+							"value": "activate"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fund Checking Account via ACH",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Track Spending per Pet",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "mifos",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "fineract-platform-tenantid",
+						"value": "default",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://backoffice.flexcore.mx/fineract-provider/api/v1/savingsaccounts/600021/transactions/1287250",
+					"protocol": "https",
+					"host": [
+						"backoffice",
+						"flexcore",
+						"mx"
+					],
+					"path": [
+						"fineract-provider",
+						"api",
+						"v1",
+						"savingsaccounts",
+						"600021",
+						"transactions",
+						"1287250"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Savings Account Product with Target Goals",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "mifos",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "fineract-platform-tenantid",
+						"value": "default",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"productId\": 1,\n    \"nominalAnnualInterestRate\": 0,\n    \"accountLevel\": 0,\n    \"withdrawalFeeForTransfers\": false,\n    \"allowOverdraft\": false,\n    \"enforceMinRequiredBalance\": false,\n    \"withHoldTax\": false,\n    \"interestCompoundingPeriodType\": 1,\n    \"interestPostingPeriodType\": 4,\n    \"interestCalculationType\": 1,\n    \"interestCalculationDaysInYearType\": 365,\n    \"submittedOnDate\": \"25 agosto 2022\",\n    \"locale\": \"es-mx\",\n    \"dateFormat\": \"dd MMMM yyyy\",\n    \"monthDayFormat\": \"dd MMM\",\n    \"charges\": [],\n    \"clientId\": \"27390010\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://backoffice.flexcore.mx/fineract-provider/api/v1/savingsaccounts",
+					"protocol": "https",
+					"host": [
+						"backoffice",
+						"flexcore",
+						"mx"
+					],
+					"path": [
+						"fineract-provider",
+						"api",
+						"v1",
+						"savingsaccounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Approve Savings Account with Target Goals",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "mifos",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "fineract-platform-tenantid",
+						"value": "default",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"approvedOnDate\": \"25 agosto 2022 04:53\",\n    \"locale\": \"es-mx\",\n    \"dateFormat\": \"dd MMMM yyyy HH:mm\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://backoffice.flexcore.mx/fineract-provider/api/v1/savingsaccounts/600022?command=approve",
+					"protocol": "https",
+					"host": [
+						"backoffice",
+						"flexcore",
+						"mx"
+					],
+					"path": [
+						"fineract-provider",
+						"api",
+						"v1",
+						"savingsaccounts",
+						"600022"
+					],
+					"query": [
+						{
+							"key": "command",
+							"value": "approve"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activate Savings Account with Target Goals",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "mifos",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "fineract-platform-tenantid",
+						"value": "default",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"activatedOnDate\": \"25 agosto 2022 04:55\",\n    \"locale\": \"es-mx\",\n    \"dateFormat\": \"dd MMMM yyyy HH:mm\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://backoffice.flexcore.mx/fineract-provider/api/v1/savingsaccounts/600022?command=activate",
+					"protocol": "https",
+					"host": [
+						"backoffice",
+						"flexcore",
+						"mx"
+					],
+					"path": [
+						"fineract-provider",
+						"api",
+						"v1",
+						"savingsaccounts",
+						"600022"
+					],
+					"query": [
+						{
+							"key": "command",
+							"value": "activate"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Automated transfers into Savings Goal",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "mifos",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "fineract-platform-tenantid",
+						"value": "default",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fromClientId\": 27390010,\n    \"fromOfficeId\": 1,\n    \"fromAccountId\": \"600021\",\n    \"fromAccountType\": 2,\n    \"transferDate\": \"25 agosto 2022\",\n    \"toOfficeId\": 1,\n    \"toAccountType\": 2,\n    \"toClientId\": 27390009,\n    \"toAccountId\": \"600019\",\n    \"transferAmount\": \"1\",\n    \"transferDescription\": \"Transfer into savings for new dog house.\",\n    \"locale\": \"es-mx\",\n    \"dateFormat\": \"dd MMMM yyyy\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://backoffice.flexcore.mx/fineract-provider/api/v1/accounttransfers",
+					"protocol": "https",
+					"host": [
+						"backoffice",
+						"flexcore",
+						"mx"
+					],
+					"path": [
+						"fineract-provider",
+						"api",
+						"v1",
+						"accounttransfers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Open Loan Account",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "mifos",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "fineract-platform-tenantid",
+						"value": "default",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"clientId\": \"27390010\",\n    \"productId\": 240005,\n    \"disbursementData\": [],\n    \"principal\": 5000,\n    \"loanTermFrequency\": 21,\n    \"loanTermFrequencyType\": 2,\n    \"numberOfRepayments\": 21,\n    \"repaymentEvery\": 1,\n    \"repaymentFrequencyType\": 2,\n    \"interestRatePerPeriod\": 20,\n    \"amortizationType\": 1,\n    \"isEqualAmortization\": false,\n    \"interestType\": 0,\n    \"interestCalculationPeriodType\": 1,\n    \"allowPartialPeriodInterestCalcualtion\": false,\n    \"transactionProcessingStrategyId\": 1,\n    \"locale\": \"es-mx\",\n    \"dateFormat\": \"dd MMMM yyyy\",\n    \"loanType\": \"individual\",\n    \"expectedDisbursementDate\": \"25 agosto 2022\",\n    \"submittedOnDate\": \"25 agosto 2022\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://backoffice.flexcore.mx/fineract-provider/api/v1/loans",
+					"protocol": "https",
+					"host": [
+						"backoffice",
+						"flexcore",
+						"mx"
+					],
+					"path": [
+						"fineract-provider",
+						"api",
+						"v1",
+						"loans"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Approve Loan Account",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "mifos",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "fineract-platform-tenantid",
+						"value": "default",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"approvedOnDate\": \"25 agosto 2022\",\n    \"approvedLoanAmount\": 5000,\n    \"expectedDisbursementDate\": \"25 agosto 2022\",\n    \"disbursementData\": [],\n    \"locale\": \"es-mx\",\n    \"dateFormat\": \"dd MMMM yyyy\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://backoffice.flexcore.mx/fineract-provider/api/v1/loans/1200011?command=approve",
+					"protocol": "https",
+					"host": [
+						"backoffice",
+						"flexcore",
+						"mx"
+					],
+					"path": [
+						"fineract-provider",
+						"api",
+						"v1",
+						"loans",
+						"1200011"
+					],
+					"query": [
+						{
+							"key": "command",
+							"value": "approve"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Disburse Loan Account",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "mifos",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "fineract-platform-tenantid",
+						"value": "default",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"paymentTypeId\": 60005,\n    \"transactionAmount\": 5000,\n    \"actualDisbursementDate\": \"25 agosto 2022\",\n    \"locale\": \"es-mx\",\n    \"dateFormat\": \"dd MMMM yyyy\",\n    \"fundId\": 150002\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://backoffice.flexcore.mx/fineract-provider/api/v1/loans/1200011?command=disburse",
+					"protocol": "https",
+					"host": [
+						"backoffice",
+						"flexcore",
+						"mx"
+					],
+					"path": [
+						"fineract-provider",
+						"api",
+						"v1",
+						"loans",
+						"1200011"
+					],
+					"query": [
+						{
+							"key": "command",
+							"value": "disburse"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Loan Repayment from Checking Account",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "mifos",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "fineract-platform-tenantid",
+						"value": "default",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"transactionDate\": \"25 agosto 2022\",\n    \"paymentTypeId\": 60005,\n    \"transactionAmount\": 284.15,\n    \"currencyCode\": 390033,\n    \"idRecord\": \"1234.00\",\n    \"locale\": \"es-mx\",\n    \"dateFormat\": \"dd MMMM yyyy\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://backoffice.flexcore.mx/fineract-provider/api/v1/loans/1200011/transactions?command=repayment",
+					"protocol": "https",
+					"host": [
+						"backoffice",
+						"flexcore",
+						"mx"
+					],
+					"path": [
+						"fineract-provider",
+						"api",
+						"v1",
+						"loans",
+						"1200011",
+						"transactions"
+					],
+					"query": [
+						{
+							"key": "command",
+							"value": "repayment"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Pet Sitter as Payee (Beneficiary)",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "mifos",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "fineract-platform-tenantid",
+						"value": "default",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"transactionDate\": \"25 agosto 2022\",\n    \"paymentTypeId\": 60005,\n    \"transactionAmount\": 284.15,\n    \"currencyCode\": 390033,\n    \"idRecord\": \"1234.00\",\n    \"locale\": \"es-mx\",\n    \"dateFormat\": \"dd MMMM yyyy\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://backoffice.flexcore.mx/fineract-provider/api/v1/loans/1200011/transactions?command=repayment",
+					"protocol": "https",
+					"host": [
+						"backoffice",
+						"flexcore",
+						"mx"
+					],
+					"path": [
+						"fineract-provider",
+						"api",
+						"v1",
+						"loans",
+						"1200011",
+						"transactions"
+					],
+					"query": [
+						{
+							"key": "command",
+							"value": "repayment"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pay pet sitter for daily fees",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "mifos",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "fineract-platform-tenantid",
+						"value": "default",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"transactionDate\": \"25 agosto 2022\",\n    \"paymentTypeId\": 60005,\n    \"transactionAmount\": 284.15,\n    \"currencyCode\": 390033,\n    \"idRecord\": \"1234.00\",\n    \"locale\": \"es-mx\",\n    \"dateFormat\": \"dd MMMM yyyy\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://backoffice.flexcore.mx/fineract-provider/api/v1/loans/1200011/transactions?command=repayment",
+					"protocol": "https",
+					"host": [
+						"backoffice",
+						"flexcore",
+						"mx"
+					],
+					"path": [
+						"fineract-provider",
+						"api",
+						"v1",
+						"loans",
+						"1200011",
+						"transactions"
+					],
+					"query": [
+						{
+							"key": "command",
+							"value": "repayment"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
